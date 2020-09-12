@@ -1,18 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CarMove : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Transform _centerMass;
+
+    private Rigidbody _rigidbody;
+
+    private void Start() 
     {
-        
+        _rigidbody = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate() 
     {
-        
+
+        _rigidbody.velocity =  new Vector3(_rigidbody.velocity.x, _rigidbody.velocity.y, 5f);
     }
+
 }

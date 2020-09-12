@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SimpleCamera : MonoBehaviour
 {
-    [SerializeField] private Transform _target;
+    public Transform target;
+    
     [SerializeField] private float _currentPositionMultiply;
     [SerializeField] private bool _thisCamera;
     [SerializeField] private LayerMask _maskObstacle;
@@ -13,19 +14,19 @@ public class SimpleCamera : MonoBehaviour
 
     void Start()
     {
-        _position = _target.InverseTransformPoint(transform.position);
+        _position = target.InverseTransformPoint(transform.position);
     }
 
     void FixedUpdate()
     {
-        var currentPosition = _target.TransformPoint(_position);
+        var currentPosition = target.TransformPoint(_position);
         
 
         if(_thisCamera)
         {
-            transform.position = Vector3.Lerp(transform.position, new Vector3(currentPosition.x * _currentPositionMultiply, currentPosition.y, currentPosition.z), 5f * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, new Vector3(currentPosition.x * _currentPositionMultiply, currentPosition.y, currentPosition.z), 2f * Time.deltaTime);
             RaycastHit hit;
-            if(Physics.Raycast(_target.position, transform.position - _target.position, out hit, Vector3.Distance(transform.position, _target.position), _maskObstacle))
+            if(Physics.Raycast(target.position, transform.position - target.position, out hit, Vector3.Distance(transform.position, target.position), _maskObstacle))
             {
                 transform.position = hit.point;
             }
