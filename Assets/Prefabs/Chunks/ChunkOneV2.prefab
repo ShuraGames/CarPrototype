@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4614123321301341009}
   - component: {fileID: 532733194332545412}
   - component: {fileID: 5253973378451183711}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: a898337603aaa4d4e802c19bda43971a, type: 3}
+  - {fileID: 2100000, guid: ea798c693a5637940be1637461397ac0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 5488726295139070347}
   - component: {fileID: 1020535343911379757}
   - component: {fileID: 8312730777165840869}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: a898337603aaa4d4e802c19bda43971a, type: 3}
+  - {fileID: 2100000, guid: ea798c693a5637940be1637461397ac0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -195,7 +195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4714117350141563685}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ChunkOneV2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

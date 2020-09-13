@@ -24,7 +24,7 @@ public class SimpleCamera : MonoBehaviour
 
         if(_thisCamera)
         {
-            transform.position = Vector3.Lerp(transform.position, new Vector3(currentPosition.x * _currentPositionMultiply, currentPosition.y, currentPosition.z), 2f * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, new Vector3(currentPosition.x * _currentPositionMultiply, currentPosition.y, currentPosition.z), 5f * Time.deltaTime);
             RaycastHit hit;
             if(Physics.Raycast(target.position, transform.position - target.position, out hit, Vector3.Distance(transform.position, target.position), _maskObstacle))
             {
