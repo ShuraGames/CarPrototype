@@ -115,6 +115,8 @@ Material:
     - _OutlineTextureType: 0
     - _OutlineWidth: 0.35
     - _Parallax: 0.02
+    - _RampBands: 4
+    - _RampBandsSmoothing: 0.1
     - _RampOffset: 0
     - _RampScale: 1
     - _RampSmoothing: 0.05
@@ -125,7 +127,7 @@ Material:
     - _ReflectionSmoothness: 1
     - _RenderingMode: 0
     - _RimMax: 0.65
-    - _RimMin: 0.6
+    - _RimMin: 0.5
     - _SingleIndirectColor: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
