@@ -32,7 +32,7 @@ public class CarMove : MonoBehaviour
         }
         else
         {
-            _rigidbody.AddForce(Vector3.up * -10f * 100f);
+            _rigidbody.AddForce(Vector3.up * -10f * 50f);
         }
 
     }
