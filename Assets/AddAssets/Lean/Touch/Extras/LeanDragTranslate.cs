@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 namespace Lean.Touch
 {
@@ -31,8 +32,11 @@ namespace Lean.Touch
 		[SerializeField]
 		private Vector3 remainingTranslation;
 
-		/// <summary>If you've set Use to ManuallyAddedFingers, then you can call this method to manually add a finger.</summary>
-		public void AddFinger(LeanFinger finger)
+		public Vector3 _test;
+
+
+        /// <summary>If you've set Use to ManuallyAddedFingers, then you can call this method to manually add a finger.</summary>
+        public void AddFinger(LeanFinger finger)
 		{
 			Use.AddFinger(finger);
 		}
@@ -61,6 +65,7 @@ namespace Lean.Touch
 
 		protected virtual void Update()
 		{
+
 			// Store
 			var oldPosition = transform.localPosition;
 
@@ -85,6 +90,7 @@ namespace Lean.Touch
 
 			// Increment
 			remainingTranslation.x += transform.localPosition.x - oldPosition.x;
+			_test.x = remainingTranslation.x;
 
 			// Get t value
 			var factor = LeanTouch.GetDampenFactor(Dampening, Time.deltaTime);

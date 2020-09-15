@@ -10,11 +10,18 @@ public class CarAssembly : MonoBehaviour
     private void OnTriggerEnter(Collider other) 
     {
         ITriggerPlayer trigger = other.GetComponent<ITriggerPlayer>();
+        IEndGame triggerEnd = other.GetComponent<IEndGame>();
         Debug.Log(trigger);
         if(trigger != null)
         {
             trigger.OnTriggerCarDetail(_nextPart, gameObject);
             trigger.OnTriggerObstacle(_previousPart, gameObject);
+        }
+
+        if(triggerEnd != null)
+        {
+            triggerEnd.OnTriggerEndGame();
+            triggerEnd.OnTriggerLoseObstacle();
         }
     }
 }

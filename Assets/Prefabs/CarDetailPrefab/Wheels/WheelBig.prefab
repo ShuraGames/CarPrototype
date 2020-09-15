@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2204070160935343808}
   - component: {fileID: 2211989590714268568}
   - component: {fileID: 2163746763660884502}
+  - component: {fileID: 626840877}
   m_Layer: 0
   m_Name: WheelBig
   m_TagString: Untagged
@@ -26,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2226230380096514804}
-  m_LocalRotation: {x: 0.00000001545431, y: 0.7071068, z: -0.00000001545431, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.70710677}
   m_LocalPosition: {x: -0.036, y: -0.687, z: -0.884}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1421284790593925155}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
 --- !u!33 &2204070160935343808
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -90,11 +91,24 @@ MeshCollider:
   m_GameObject: {fileID: 2226230380096514804}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300004, guid: 0dc614578c5b60f4da8b2622f7aacbea, type: 3}
+--- !u!135 &626840877
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2226230380096514804}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.33438817
+  m_Center: {x: 0.00000010430813, y: 0.000000044703484, z: -0.000000014901165}
 --- !u!1 &4360779146816723475
 GameObject:
   m_ObjectHideFlags: 0

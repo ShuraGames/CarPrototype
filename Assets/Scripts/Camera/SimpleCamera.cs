@@ -19,21 +19,19 @@ public class SimpleCamera : MonoBehaviour
 
     void FixedUpdate()
     {
-        var currentPosition = target.TransformPoint(_position);
-        
 
+        var oldRotation = target.rotation;
+        target.rotation = Quaternion.Euler(0, oldRotation.eulerAngles.y, 0);
+        var currentPosition = target.TransformPoint(_position);
+        target.rotation = oldRotation;
+        
         if(_thisCamera)
         {
-            transform.position = Vector3.Lerp(transform.position, new Vector3(currentPosition.x * _currentPositionMultiply, currentPosition.y, currentPosition.z), 5f * Time.deltaTime);
-            RaycastHit hit;
-            if(Physics.Raycast(target.position, transform.position - target.position, out hit, Vector3.Distance(transform.position, target.position), _maskObstacle))
-            {
-                transform.position = hit.point;
-            }
+            transform.position = Vector3.Lerp(transform.position, new Vector3(currentPosition.x * _currentPositionMultiply, currentPosition.y, currentPosition.z), 10f * Time.fixedDeltaTime);
         }
         else
         {
-            transform.position = Vector3.Lerp(transform.position, new Vector3(currentPosition.x * _currentPositionMultiply, transform.position.y, currentPosition.z), 5f * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, new Vector3(currentPosition.x * _currentPositionMultiply, transform.position.y, currentPosition.z), 5f * Time.fixedDeltaTime);
         }
     }
 }
