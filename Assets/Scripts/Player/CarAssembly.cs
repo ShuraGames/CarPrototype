@@ -11,7 +11,6 @@ public class CarAssembly : MonoBehaviour
     {
         ITriggerPlayer trigger = other.GetComponent<ITriggerPlayer>();
         IEndGame triggerEnd = other.GetComponent<IEndGame>();
-        Debug.Log(trigger);
         if(trigger != null)
         {
             trigger.OnTriggerCarDetail(_nextPart, gameObject);

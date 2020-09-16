@@ -13,6 +13,7 @@ public class DetailAdd : MonoBehaviour, ITriggerPlayer
 
         if(nextPart != null)
         {
+            DetailCounter.instance.DetailAdd();
             nextPart.transform.position = player.transform.position;
             nextPart.SetActive(true);
             player.SetActive(false);

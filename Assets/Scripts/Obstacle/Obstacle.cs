@@ -15,6 +15,7 @@ public class Obstacle : MonoBehaviour, ITriggerPlayer
 
         if(previousPart != null)
         {
+            DetailCounter.instance.RemoveDetail();
             previousPart.transform.position = player.transform.position;
             previousPart.SetActive(true);
             player.SetActive(false);
