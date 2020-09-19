@@ -2,6 +2,6 @@
 
 public interface IEndGame
 {
-    void OnTriggerEndGame();
-    void OnTriggerLoseObstacle();
+    void OnTriggerEndGame(GameObject player);
+    void OnTriggerLoseObstacle(GameObject player);
 }

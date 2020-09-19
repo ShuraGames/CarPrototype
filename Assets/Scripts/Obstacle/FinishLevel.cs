@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class FinishLevel : MonoBehaviour, IEndGame
 {
-    public void OnTriggerEndGame()
+
+    [SerializeField] private Transform _winnerPlatform;
+
+    public void OnTriggerEndGame(GameObject player)
     {
-        Debug.Log("You Finish Level");
+
+        player.GetComponent<Rigidbody>().useGravity = false;
+        player.GetComponent<Rigidbody>().isKinematic = true;
+        player.GetComponent<CarMove>().enabled = false;
+        player.transform.position = new Vector3(_winnerPlatform.position.x, _winnerPlatform.position.y, _winnerPlatform.position.z);
+        
     }
 
-    public void OnTriggerLoseObstacle()
+    public void OnTriggerLoseObstacle(GameObject player)
     {
         
     }

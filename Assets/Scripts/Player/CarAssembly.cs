@@ -19,8 +19,8 @@ public class CarAssembly : MonoBehaviour
 
         if(triggerEnd != null)
         {
-            triggerEnd.OnTriggerEndGame();
-            triggerEnd.OnTriggerLoseObstacle();
+            triggerEnd.OnTriggerEndGame(gameObject);
+            triggerEnd.OnTriggerLoseObstacle(gameObject);
         }
     }
 }

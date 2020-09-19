@@ -4,11 +4,31 @@ using UnityEngine;
 
 public class DeathObstacle : MonoBehaviour, IEndGame
 {
-    public void OnTriggerEndGame()
+    private SimpleCamera _simpleCamera;
+
+    private void Start() 
+    {
+        _simpleCamera = Camera.main.GetComponent<SimpleCamera>();
+    }
+
+    public void OnTriggerEndGame(GameObject player)
     {}
 
-    public void OnTriggerLoseObstacle()
+    public void OnTriggerLoseObstacle(GameObject player)
     {
-        Debug.Log("You death");
+        player.GetComponent<Rigidbody>().useGravity = false;
+        player.GetComponent<Rigidbody>().isKinematic = true;
+        player.GetComponent<CarMove>().enabled = false;
+
+        var count = player.transform.childCount;
+
+        for (int i = 0; i < count; i++)
+        {
+            var obj = player.transform.GetChild(i);
+
+            var rb = obj.gameObject.AddComponent<Rigidbody>();
+
+            rb.AddForceAtPosition(new Vector3(Random.Range(-3, 3), Random.Range(5, 3), Random.Range(-3, 3)), transform.position, ForceMode.Impulse);
+        }
     }
 }
