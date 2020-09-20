@@ -146,6 +146,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _simpleCamera: {fileID: 0}
+  _obstacleEffect: {fileID: 8599257116350599359, guid: a8d0f4736ff4b9943a5b5e9d1681f459,
+    type: 3}
 --- !u!1 &2172552852419238576
 GameObject:
   m_ObjectHideFlags: 0

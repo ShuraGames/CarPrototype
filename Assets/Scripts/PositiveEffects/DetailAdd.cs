@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class DetailAdd : MonoBehaviour, ITriggerPlayer
 {
     [SerializeField] private SimpleCamera _simpleCamera;
@@ -17,7 +18,7 @@ public class DetailAdd : MonoBehaviour, ITriggerPlayer
         if(nextPart != null)
         {
 
-            DetailCounter.instance.DetailAdd();
+            CounterGame.instance.DetailAdd();
             var instanceParticle = Instantiate(_poofEffect, player.transform.position, Quaternion.identity);
             Destroy(instanceParticle, instanceParticle.GetComponent<ParticleSystem>().main.duration);
             nextPart.transform.position = player.transform.position;
@@ -31,6 +32,6 @@ public class DetailAdd : MonoBehaviour, ITriggerPlayer
         gameObject.SetActive(false);
     }
 
-    public void OnTriggerObstacle(GameObject previousPart, GameObject player)
+    public void OnTriggerObstacle(GameObject previousPart, GameObject player, GameObject detail)
     {}
 }

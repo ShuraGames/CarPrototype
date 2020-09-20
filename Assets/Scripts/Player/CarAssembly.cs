@@ -6,6 +6,7 @@ public class CarAssembly : MonoBehaviour
 {
     [SerializeField] private GameObject _nextPart;
     [SerializeField] private GameObject _previousPart;
+    [SerializeField] private GameObject _detail;
 
     private void OnTriggerEnter(Collider other) 
     {
@@ -14,7 +15,7 @@ public class CarAssembly : MonoBehaviour
         if(trigger != null)
         {
             trigger.OnTriggerCarDetail(_nextPart, gameObject);
-            trigger.OnTriggerObstacle(_previousPart, gameObject);
+            trigger.OnTriggerObstacle(_previousPart, gameObject, _detail);
         }
 
         if(triggerEnd != null)
